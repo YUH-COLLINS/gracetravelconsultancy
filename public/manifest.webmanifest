@@ -1,0 +1,10 @@
+{
+  "name": "Grace Travel Consultancy",
+  "short_name": "Grace Travel",
+  "description": "Premium travel and study abroad consultancy website.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0B3D91",
+  "icons": []
+}

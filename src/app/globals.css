@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+:root {
+  --font-inter: "Inter", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+}
+
+body {
+  font-family: var(--font-inter);
+  background: #ffffff;
+  color: #1e293b;
+}
+
+button,
+a,
+[role="button"],
+.premium-card {
+  cursor: pointer;
+}
+
+button:disabled,
+[aria-disabled="true"] {
+  cursor: not-allowed;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-poppins);
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+@keyframes floatSoft {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.premium-card {
+  position: relative;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.98) 100%);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 14px 34px rgba(2, 8, 23, 0.08);
+  transition: transform 260ms ease, box-shadow 260ms ease, border-color 260ms ease;
+}
+
+.premium-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(140deg, rgba(0, 174, 239, 0.08), rgba(212, 175, 55, 0.08));
+  opacity: 0;
+  transition: opacity 260ms ease;
+}
+
+.premium-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 24px 48px rgba(11, 61, 145, 0.16);
+  border-color: rgba(11, 61, 145, 0.2);
+}
+
+.premium-card:hover::after {
+  opacity: 1;
+}
+
+.float-soft {
+  animation: floatSoft 5.5s ease-in-out infinite;
+}
+
+.logo-blend {
+  mix-blend-mode: multiply;
+  filter: saturate(1.08) contrast(1.05);
+}
+
+.logo-blend-dark {
+  mix-blend-mode: screen;
+  filter: brightness(1.06) saturate(1.08);
+}
+
+.brand-logo {
+  transform: scale(1.22);
+  transform-origin: left center;
+  will-change: transform;
+}
+
+.dark body {
+  background: #020617;
+  color: #e2e8f0;
+}
+
+.dark .bg-white {
+  background-color: #0f172a !important;
+}
+
+.dark .bg-\[\#F7F8FA\] {
+  background-color: #111827 !important;
+}
+
+.dark .text-slate-900 {
+  color: #f8fafc !important;
+}
+
+.dark .text-slate-800 {
+  color: #e2e8f0 !important;
+}
+
+.dark .text-slate-700,
+.dark .text-slate-600,
+.dark .text-slate-500 {
+  color: #94a3b8 !important;
+}
+
+.dark .border-slate-200,
+.dark .border-slate-300 {
+  border-color: rgba(148, 163, 184, 0.28) !important;
+}
+
+.dark .premium-card {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.92) 0%, rgba(15, 23, 42, 1) 100%);
+  box-shadow: 0 14px 34px rgba(2, 8, 23, 0.5);
+}
